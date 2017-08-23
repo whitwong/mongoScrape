@@ -1,0 +1,29 @@
+.jumbotron h1, h2 {
+	color: grey;
+	text-align: center;
+}
+
+.headers {
+  margin-left: -18em;
+  margin-top: 8em;
+}
+
+.header-background {
+	height: 70vh;
+	background-image: url("../images/lightbulbs3.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 60%;
+}
+
+.card {
+	margin-bottom: 10px;
+}
+
+.delete-note {
+	float:right;
+}
+
+.article-title {
+	font-style: italic;
+}

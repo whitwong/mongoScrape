@@ -1,0 +1,120 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Mongo Scraper</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+      <!-- <a class="nav-item nav-link" href="/saved-articles">Saved Articles</a> -->
+      <button><a id="scrape-articles" class="nav-item nav-link" href="#">Scrape New Articles!</a></button>
+    </div>
+  </div>
+</nav>
+
+<!-- Headers -->
+<div class="row">
+  <div class="col-sm-12 header-background jumbotron">
+    <div class="headers">
+      <h1>Web Scraping Reddit</h1>
+      <h2>Today I Learned (TIL)</h2>
+    </div>
+  </div>
+</div>
+
+<!-- Finished Modal after Article Scrape -->
+<div id="doneModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title"><strong>Articles Scraped!</strong></h2>
+      </div>
+      <div class="modal-body">
+        <button id="closeModal" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Main Article Page -->
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-6">
+  	{{#each article}}
+  	<div class="card">
+  		<div class="card-block">
+  			<h5 class="card-title">{{this.title}}</h5>
+  			<p class="card-text">Source: <a href="{{this.link}}">{{this.link}}</a><button style="float:right" class="see-notes" data-id="{{this._id}}">See Notes</button></p>
+  		</div>
+  	</div>
+  	{{/each}}
+  </div>
+
+  <div class="col-md-1"></div>
+  <div class="col-md-3" id="notes">
+    <div> Articles Notes for <span class="article-title"></span>
+      <div class="displayNotes"></div>
+
+      <form>
+        <div class="form-group">
+          <label for="note-text" class="form-control-label">Write a new note:</label>
+          <textarea class="form-control note-text"></textarea>
+        </div>
+      </form>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary save-note">Save Note</button>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+
+<!-- Notes Modal -->
+<!-- <div class="modal fade" id="noteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Write a New Note</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+      	<div class="displayNotes">
+      			{{#each note}}
+						<div class="card">
+							<div class="card-block">
+								<p class="card-text">{{this.text}}</p>
+								<button class="delete-note" data-id="{{this._id}}">Delete Note</button>
+							</div>
+						</div>
+      			{{/each}}
+      	</div>
+
+        <form>
+          <div class="form-group">
+            <label for="note-text" class="form-control-label">Note:</label>
+            <textarea class="form-control note-text"></textarea>
+          </div>
+        </form>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary save-note">Save Note</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+-->

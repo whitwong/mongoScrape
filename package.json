@@ -1,0 +1,36 @@
+{
+  "name": "mongoscrape",
+  "version": "1.0.0",
+  "description": "Application to scrape and pull data from a webpage. Uses MongoDB as database for data storage.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whitwong/mongoScrape.git"
+  },
+  "keywords": [
+    "mongo",
+    "mongoose",
+    "express",
+    "express-handlebars",
+    "body-parser",
+    "cheerio",
+    "request"
+  ],
+  "author": "Whitney Wong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/whitwong/mongoScrape/issues"
+  },
+  "homepage": "https://github.com/whitwong/mongoScrape#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^4.11.7",
+    "request": "^2.81.0"
+  }
+}

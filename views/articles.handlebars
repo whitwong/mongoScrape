@@ -1,0 +1,39 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Mongo Scraper</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="/saved-articles">Saved Articles</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Headers -->
+<div class="row">
+  <div class="col-sm-12 header-background jumbotron">
+    <div class="headers">
+      <h1>List of Saved Articles</h1>
+      <h2>Write notes for later!</h2>
+    </div>
+  </div>
+</div>
+
+<!-- Main Articles Body -->
+<div id="savedArticles">
+  <div>
+    {{#each saved}}
+    <div class="card">
+      <div class="card-block">
+        <h5 class="card-title">{{this.title}}</h5>
+        <p class="card-text">Article Link: <a href="{{this.link}}">{{this.link}}</a></p>
+        <button class="save-article" data-id="{{this._id}}">Save Article</button>
+        <button class="write-note" data-id="{{this._id}}">Write a Note</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
