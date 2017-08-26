@@ -28,7 +28,8 @@ app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://localhost/mongooseScrape");
+// mongoose.connect("mongodb://localhost/mongooseScrape"); // For localhost connection
+mongoose.connect("mongodb://heroku_8vfxnv7w:639gt1d12ut06sjh4jqfmojktj@ds153113.mlab.com:53113/heroku_8vfxnv7w");
 var db = mongoose.connection;
 
 // Show any mongoose errors
@@ -163,25 +164,3 @@ app.get("/populatedArticles", function(req, res){
 app.listen(port, function(){
 	console.log("App running on port " + port);
 });
-
-
-// DO LATER
-// // Save articles to another route
-// app.post("/saved-articles", function(req, res){
-// 	var newSavedArticle = new Article(req.body);
-// 	newSavedArticle.save(function(error, article){
-// 		if (error){
-// 			console.log(error);
-// 		}
-// 		else {
-// 			res.render("articles", {saved: article})
-// 		}
-// 	})
-// })
-
-// // Show Saved Articles page with saved articles
-// app.get("/saved-articles", function(req, res){
-// 	Article.find({}, function(error, data){
-// 		res.render("articles", {saved: data});
-// 	});
-// });

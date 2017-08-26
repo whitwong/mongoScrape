@@ -77,22 +77,3 @@ function deleteNote(articleId){
 		});
 	});
 }
-
-
-
-/***************** Articles Page Functions *****************/
-// DO LATER
-function saveArticle(){
-	$(document).on("click", ".save-article", function(){
-		var articleId = $(this).attr("data-id");
-		console.log(articleId)
-
-		$.get("/articles/"+articleId, function(article){
-			console.log(article)
-			$.post("/saved-articles", article, function(){
-
-			})
-		})
-	})
-}
-// saveArticle();
